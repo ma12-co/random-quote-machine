@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import QuoteButton from "./components/QuoteButton.js"
+import QuoteButton from "./components/QuoteButton/QuoteButton.js"
+import Quote from "./components/Quote.js"
+
 
 
 class App extends Component {
@@ -53,17 +55,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>
-           {this.state.quote}
-          </h1>
-          <h3>
-           {this.state.author}
-          </h3>
+          <header className="App-header">
+          <Quote quote={this.state.quote} author={this.state.author} />
           <QuoteButton updateQuote={this.updateQuote} />
-        </header>
+          </header>
       </div>
-    );
+    )
   }
 }
 

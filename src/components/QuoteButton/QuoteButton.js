@@ -1,4 +1,5 @@
 import React from "react"
+import "./QuoteButton.css"
 
 function QuoteButton(props) {
     return (
