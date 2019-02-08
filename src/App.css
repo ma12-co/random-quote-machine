@@ -1,33 +1,46 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-color: #000f91;
+  display: grid;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 100vh;
+  grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas: 
+        ". . . . . . . . . . . ."
+        ". q q q q q q q q q q ."
+        ". q q q q q q q q q q ."
+        ". q q q q q q q q q q ."
+        ". q q q q q q q q q q ."
+        ". q q q q q q q q q q ."
+        ". q q q q q q q q q q ."
+        ". q q q q q q q q q q ."
+        ". s s s s s s s s s s ."
+        ". b b b b b b b b b b ."
+        ". . . . . . . . . . . ."
+        ". f f f f f f f f f f .";
 }
 
-.App-link {
-  color: #61dafb;
+
+.quote {
+  grid-area:q;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social {
+  grid-area:s;
+
 }
+
+.quoteButton {
+  grid-area:b;
+
+}
+
+.footer {
+  grid-area:f;
+
+}
+
+
 

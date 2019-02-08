@@ -1,14 +1,14 @@
 import React from "react"
-
+import "./Quote.css"
 function Component(props) {
     return (
-        <div>
-            <h1>
+        <div className="quote">
+            <h1 id="text">
            {props.quote}
           </h1>
-          <h3>
+          <h4 id="author">
            {props.author}
-          </h3>
+          </h4>
         </div>
         
     )
@@ -16,7 +16,6 @@ function Component(props) {
 
 
 export default Component
-
 
 
 

@@ -3,8 +3,8 @@ import "./QuoteButton.css"
 
 function QuoteButton(props) {
     return (
-        <div> 
-            <button className="quoteButton" onClick={props.updateQuote}>Get a new quote!</button>
+        <div className="quoteButton"> 
+            <button id="new-quote" className="quoteButton" onClick={props.updateQuote}>Get a new quote!</button>
         </div>
     )
 } 

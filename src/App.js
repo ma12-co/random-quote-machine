@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import "./App.css";
 
 import QuoteButton from "./components/QuoteButton/QuoteButton.js"
-import Quote from "./components/Quote.js"
-
+import Quote from "./components/Quote/Quote.js"
+import Footer from "./components/Footer/Footer.js"
+import Social from "./components/Social/Social"
 
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      loading : false,
       quotes : {},
       quote : "",
       author: ""
@@ -38,7 +38,6 @@ class App extends Component {
     .catch(err => console.log("error while fetching, ",err)) 
     
   }
-  
 
 
   updateQuote() {
@@ -54,11 +53,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-          <header className="App-header">
+      <div className="App" id="quote-box">
           <Quote quote={this.state.quote} author={this.state.author} />
+          <Social />
           <QuoteButton updateQuote={this.updateQuote} />
-          </header>
+          <Footer />
       </div>
     )
   }

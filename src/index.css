@@ -14,5 +14,42 @@ code {
 }
 
 h1 {
-  color:blue
+  font-size:  1em;
+  line-height:  1.3em;
+
+}
+
+h2 {
+  font-size:  0.8em;
+}
+
+h3 {
+  font-size:  0.7em;
+}
+
+h4 {
+  font-size:  0.6em;
+  line-height:  1em;
+
+
+}
+
+h5 {
+  font-size:  0.5em;
+}
+
+.Footer {
+  color: red;
+  background-color: aliceblue;
+}
+
+a {
+  color:white;
+  font-family: 'Press Start 2P';
+  
+
+}
+
+a:hover {
+  color: red
 }
