@@ -1,0 +1,47 @@
+.Settings {
+    text-align: center;
+    background-color: #000f91;
+    display: grid;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(12, 1fr);
+      grid-template-areas: 
+          ". . . . . . . . . . . ."
+          ". q q q q q q q q q q ."
+          ". q q q q q q q q q q ."
+          ". q q q q q q q q q q ."
+          ". q q q q q q q q q q ."
+          ". q q q q q q q q q q ."
+          ". q q q q q q q q q q ."
+          ". q q q q q q q q q q ."
+          ". s s s s s s s s s s ."
+          ". b b b b b b b b b b ."
+          ". . . . . . . . . . . ."
+          ". f f f f f f f f f f .";
+  }
+  
+  
+  .quote {
+    grid-area:q;
+  }
+  
+  .social {
+    grid-area:s;
+  
+  }
+  
+  .quoteButton {
+    grid-area:b;
+  
+  }
+  
+  .footer {
+    grid-area:f;
+  
+  }
+  
+  
+  
+  

@@ -41,7 +41,6 @@ class App extends Component {
 
 
   updateQuote() {
-      console.log(this.state.quotes)
       let random = Math.floor(Math.random() * this.state.quotes.length) 
       let quote = this.state.quotes[random].quote
       let author = this.state.quotes[random].author
