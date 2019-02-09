@@ -6,41 +6,34 @@
   color: white;
   height: 100vh;
   grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-areas: 
-        ". . . . . . . . . . . ."
-        ". q q q q q q q q q q ."
-        ". q q q q q q q q q q ."
-        ". q q q q q q q q q q ."
-        ". q q q q q q q q q q ."
-        ". q q q q q q q q q q ."
-        ". q q q q q q q q q q ."
-        ". q q q q q q q q q q ."
-        ". s s s s s s s s s s ."
-        ". b b b b b b b b b b ."
-        ". . . . . . . . . . . ."
-        ". f f f f f f f f f f .";
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-areas:
+    ". . . . . . . . . . . ."
+    ". q q q q q q q q q q ."
+    ". q q q q q q q q q q ."
+    ". q q q q q q q q q q ."
+    ". q q q q q q q q q q ."
+    ". q q q q q q q q q q ."
+    ". q q q q q q q q q q ."
+    ". q q q q q q q q q q ."
+    ". s s s s s s s s s s ."
+    ". b b b b b b b b b b ."
+    ". . . . . . . . . . . ."
+    ". f f f f f f f f f f .";
 }
 
-
 .quote {
-  grid-area:q;
+  grid-area: q;
 }
 
 .social {
-  grid-area:s;
-
+  grid-area: s;
 }
 
 .quoteButton {
-  grid-area:b;
-
+  grid-area: b;
 }
 
 .footer {
-  grid-area:f;
-
+  grid-area: f;
 }
-
-
-

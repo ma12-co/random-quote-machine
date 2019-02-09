@@ -11,9 +11,15 @@ class App extends Component {
     this.state = {
       quotes: {},
       quote: "",
-      author: ""
+      author: "",
+      darkMode: true,
+      fullScreen: false
     }
     this.updateQuote = this.updateQuote.bind(this)
+    this.darkModeOn = this.darkModeOn.bind(this)
+    this.darkModeOff = this.darkModeOff.bind(this)
+    this.fullScreenOn = this.fullScreenOn.bind(this)
+    this.fullScreenOff = this.fullScreenOff.bind(this)
   }
 
   componentDidMount() {
@@ -46,14 +52,52 @@ class App extends Component {
     })
   }
 
+  darkModeOn() {
+    this.setState({
+      darkMode: true
+    })
+  }
+
+  darkModeOff() {
+    this.setState({
+      darkMode: false
+    })
+  }
+
+  fullScreenOn() {
+    this.setState({
+      fullScreen: true
+    })
+  }
+
+  fullScreenOff() {
+    this.setState({
+      fullScreen: false
+    })
+  }
+
   render() {
+    //conditional logic for the darkMode
+    let style = {
+      backgroundColor: "blue",
+      color: "white"
+    }
+
+    if (this.state.darkMode) {
+      style.backgroundColor = "00063F"
+      style.color = "white"
+    } else if (!this.state.darkMode) {
+      style.backgroundColor = "white"
+      style.color = "00063F"
+    }
+
     return (
       <BrowserRouter>
-        <div>
+        <div style={style}>
           <Route
             path="/"
             exact
-            render={props => (
+            render={() => (
               <Home
                 updateQuote={this.updateQuote}
                 quote={this.state.quote}
@@ -61,7 +105,17 @@ class App extends Component {
               />
             )}
           />
-          <Route path="/settings" component={Settings} exact />
+          <Route
+            path="/settings"
+            render={() => (
+              <Settings
+                darkModeOn={this.darkModeOn}
+                darkModeOff={this.darkModeOff}
+                state={this.state}
+              />
+            )}
+            exact
+          />
         </div>
       </BrowserRouter>
     )
