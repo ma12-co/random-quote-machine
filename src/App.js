@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route } from "react-router-dom"
+import styled from "styled-components"
+
 import Home from "./Home"
 import Settings from "./Settings"
-
-import "./App.css"
 
 class App extends Component {
   constructor() {
@@ -78,48 +78,93 @@ class App extends Component {
 
   render() {
     //conditional logic for the darkMode
-    let style = {
-      backgroundColor: "blue",
-      color: "white"
-    }
-
-    if (this.state.darkMode) {
-      style.backgroundColor = "00063F"
-      style.color = "white"
-    } else if (!this.state.darkMode) {
-      style.backgroundColor = "white"
-      style.color = "00063F"
-    }
 
     return (
       <BrowserRouter>
-        <div style={style}>
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <Home
-                updateQuote={this.updateQuote}
-                quote={this.state.quote}
-                author={this.state.author}
-              />
-            )}
-          />
-          <Route
-            path="/settings"
-            render={() => (
-              <Settings
-                darkModeOn={this.darkModeOn}
-                darkModeOff={this.darkModeOff}
-                state={this.state}
-              />
-            )}
-            exact
-          />
-        </div>
+        <GlobalStyles>
+          <div>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <Home
+                  updateQuote={this.updateQuote}
+                  quote={this.state.quote}
+                  author={this.state.author}
+                />
+              )}
+            />
+            <Route
+              path="/settings"
+              render={() => (
+                <Settings
+                  darkModeOn={this.darkModeOn}
+                  darkModeOff={this.darkModeOff}
+                  state={this.state}
+                />
+              )}
+              exact
+            />
+          </div>
+        </GlobalStyles>
       </BrowserRouter>
     )
   }
 }
 
 export default App
+
+const GlobalStyles = styled.div`
+
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Press Start 2P", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    background-color: #3f1779;
+        color: white;
+
+a {color:white;}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1 {
+  font-size: 1em;
+  line-height: 1.3em;const
+}
+
+h2 {
+  font-size: 0.8em;
+}
+
+h3 {
+  font-size: 0.7em;
+}
+
+h4 {
+  font-size: 0.6em;
+  line-height: 1em;
+}
+
+h5 {
+  font-size: 0.5em;
+}
+
+.Footer {
+  color: red;
+  background-color: aliceblue;
+}
+
+a {
+  font-family: "Press Start 2P";
+}
+
+a:hover {
+  color: red;
+}
+`
