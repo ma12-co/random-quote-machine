@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 //import "./Settings.css"
 
-import DarkMode from "./components/DarkMode"
+import DarkMode from "./components//DarkMode"
 
 export default function Settings(props) {
   return (
@@ -21,9 +22,9 @@ export default function Settings(props) {
           <h3>Fullscreen</h3>
         </div>
         <div className="exitButton">
-          <a href="/">
+          <Link to="/">
             <h1>X</h1>
-          </a>
+          </Link>
         </div>
       </div>
     </Layout>

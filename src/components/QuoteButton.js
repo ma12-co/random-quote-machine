@@ -12,11 +12,11 @@ export default function QuoteButton(props) {
 }
 
 const Button = styled.button`
-  color: 00063f;
+  color: ${props => props.theme.color};
   font-size: 16px;
   font-family: "Press Start 2P";
   background-color: #ffffff00;
   padding: 20px 20px 20px 20px;
   border-radius: 4px;
-  border-color: #00063f;
+  border-color: ${props => props.theme.color};
 `
