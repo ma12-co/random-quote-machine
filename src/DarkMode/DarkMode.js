@@ -1,7 +1,7 @@
 import React from "react"
 
-import Yes from "../svg/Yes"
-import No from "../svg/No"
+import Yes from "./Yes"
+import No from "./No"
 
 export default function DarkMode(props) {
   console.log(props.state.darkMode)

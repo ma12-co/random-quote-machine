@@ -35,14 +35,6 @@ h5 {
   font-size: 0.5em;
 }
 
-a {
-  font-family: "Press Start 2P";
-}
-
-a:hover {
-  color: red;
-}
-
 .strokeicon {
   stroke: white;
 }

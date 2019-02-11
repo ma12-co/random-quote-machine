@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import styled from "styled-components"
 import { ThemeProvider } from "styled-components"
+import Fullscreen from "react-full-screen"
 
 import "./global.css"
 import Home from "./Home"
@@ -94,34 +95,38 @@ export default class App extends Component {
 
     return (
       <div>
-        <ThemeProvider theme={this.state.darkMode ? DarkTheme : LightTheme}>
-          <BrowserRouter>
-            <GlobalStyles>
-              <Route
-                path="/"
-                exact
-                render={() => (
-                  <Home
-                    updateQuote={this.updateQuote}
-                    quote={this.state.quote}
-                    author={this.state.author}
-                  />
-                )}
-              />
-              <Route
-                path="/settings"
-                render={() => (
-                  <Settings
-                    darkModeOn={this.darkModeOn}
-                    darkModeOff={this.darkModeOff}
-                    state={this.state}
-                  />
-                )}
-                exact
-              />
-            </GlobalStyles>
-          </BrowserRouter>
-        </ThemeProvider>{" "}
+        <Fullscreen enabled={this.state.fullScreen}>
+          <ThemeProvider theme={this.state.darkMode ? DarkTheme : LightTheme}>
+            <BrowserRouter>
+              <GlobalStyles>
+                <Route
+                  path="/"
+                  exact
+                  render={() => (
+                    <Home
+                      updateQuote={this.updateQuote}
+                      quote={this.state.quote}
+                      author={this.state.author}
+                    />
+                  )}
+                />
+                <Route
+                  path="/settings"
+                  render={() => (
+                    <Settings
+                      darkModeOn={this.darkModeOn}
+                      darkModeOff={this.darkModeOff}
+                      fullScreenOn={this.fullScreenOn}
+                      fullScreenOff={this.fullScreenOff}
+                      state={this.state}
+                    />
+                  )}
+                  exact
+                />
+              </GlobalStyles>
+            </BrowserRouter>
+          </ThemeProvider>{" "}
+        </Fullscreen>
       </div>
     )
   }
@@ -132,5 +137,8 @@ const GlobalStyles = styled.div`
   background-color: ${props => props.theme.backgroundColor};
   a {
     color: ${props => props.theme.color};
+    &:hover {
+      color: red;
+    }
   }
 `

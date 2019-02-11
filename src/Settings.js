@@ -3,7 +3,8 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 //import "./Settings.css"
 
-import DarkMode from "./components//DarkMode"
+import DarkMode from "./DarkMode/DarkMode"
+import FullScreenMode from "./FullScreenMode/FullScreenMode"
 
 export default function Settings(props) {
   return (
@@ -18,9 +19,11 @@ export default function Settings(props) {
         <div className="scheduler">
           <h3>Quote scheduler</h3>
         </div>
-        <div className="fullScreen">
-          <h3>Fullscreen</h3>
-        </div>
+        <FullScreenMode
+          state={props.state}
+          fullScreenOn={props.fullScreenOn}
+          fullScreenOff={props.fullScreenOff}
+        />
         <div className="exitButton">
           <Link to="/">
             <h1>X</h1>
