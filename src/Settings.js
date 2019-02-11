@@ -21,6 +21,7 @@ export default function Settings(props) {
           displayHourBasedScheduler={props.displayHourBasedScheduler}
           displayDayBasedScheduler={props.displayDayBasedScheduler}
           turnOffScheduler={props.turnOffScheduler}
+          activateHourBasedScheduler={props.activateHourBasedScheduler}
         />
         <FullScreenMode
           state={props.state}
@@ -49,9 +50,9 @@ const Layout = styled.div`
       ". . . . . . . . . . . ."
       ". . . . . . . . . . x ."
       ". . d d d d d d d d . ."
-      ". . d d d d d d d d . ."
+      ". . . . . . . . . . . ."
       ". . f f f f f f f f . ."
-      ". . f f f f f f f f . ."
+      ". . . . . . . . . . . ."
       ". . s s s s s s s s . ."
       ". . s s s s s s s s . ."
       ". . . . . . . . . . . ."

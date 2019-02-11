@@ -21,7 +21,7 @@ export default class App extends Component {
         hourBased: {
           display: false,
           active: false,
-          interval: null
+          interval: 1
         },
         dayBased: {
           display: false,
@@ -108,7 +108,8 @@ export default class App extends Component {
     this.setState({
       scheduler: {
         hourBased: {
-          display: true
+          display: true,
+          interval: 1
         },
         dayBased: {
           display: false
@@ -131,7 +132,18 @@ export default class App extends Component {
   }
 
   //activates the hour based quote automatic update
-  activateHourBasedScheduler() {}
+  activateHourBasedScheduler(e) {
+    e.persist()
+    this.setState({
+      scheduler: {
+        hourBased: {
+          display: true,
+          active: true,
+          interval: e.target.value
+        }
+      }
+    })
+  }
 
   //activates the day based quote automatic update
   activateDayBasedScheduler() {}
@@ -186,6 +198,9 @@ export default class App extends Component {
                       displayHourBasedScheduler={this.displayHourBasedScheduler}
                       displayDayBasedScheduler={this.displayDayBasedScheduler}
                       turnOffScheduler={this.turnOffScheduler}
+                      activateHourBasedScheduler={
+                        this.activateHourBasedScheduler
+                      }
                     />
                   )}
                   exact

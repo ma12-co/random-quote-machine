@@ -55,3 +55,7 @@ button:hover {
 link:hover {
   color: red;
 }
+
+span {
+  display: flex;
+}
