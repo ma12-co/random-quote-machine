@@ -42,3 +42,22 @@ a {
 a:hover {
   color: red;
 }
+
+.strokeicon {
+  stroke: white;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+button:hover {
+  color: red;
+  background-color: transparent;
+  border: 2px solid red;
+}
+
+link:hover {
+  color: red;
+}

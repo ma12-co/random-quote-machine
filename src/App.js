@@ -2,10 +2,12 @@ import React, { Component } from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import styled from "styled-components"
 import { ThemeProvider } from "styled-components"
+
 import "./global.css"
 import Home from "./Home"
 import Settings from "./Settings"
 
+//defining the themes for Themeprovider
 const DarkTheme = {
   color: "white",
   backgroundColor: "blue"
@@ -126,11 +128,9 @@ export default class App extends Component {
 }
 
 const GlobalStyles = styled.div`
-
   color: ${props => props.theme.color};
   background-color: ${props => props.theme.backgroundColor};
   a {
     color: ${props => props.theme.color};
   }
-
 `
