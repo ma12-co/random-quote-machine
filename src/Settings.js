@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 
 import DarkMode from "./DarkMode/DarkMode"
 import FullScreenMode from "./FullScreenMode/FullScreenMode"
+import Scheduler from "./Scheduler/Scheduler"
 
 export default function Settings(props) {
   return (
@@ -15,10 +16,12 @@ export default function Settings(props) {
           darkModeOff={props.darkModeOff}
           state={props.state}
         />
-
-        <div className="scheduler">
-          <h3>Quote scheduler</h3>
-        </div>
+        <Scheduler
+          state={props.state}
+          displayHourBasedScheduler={props.displayHourBasedScheduler}
+          displayDayBasedScheduler={props.displayDayBasedScheduler}
+          turnOffScheduler={props.turnOffScheduler}
+        />
         <FullScreenMode
           state={props.state}
           fullScreenOn={props.fullScreenOn}

@@ -40,6 +40,8 @@ h5 {
 }
 
 button {
+  font-family: "Press Start 2P", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: transparent;
   border: 2px solid white;
 }
