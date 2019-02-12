@@ -243,8 +243,6 @@ export default class App extends Component {
   }
 
   render() {
-    //conditional logic for the darkMode
-
     return (
       <div>
         {/* fullscreen wrapper for react-full-screen */}
@@ -259,6 +257,7 @@ export default class App extends Component {
                   exact
                   render={() => (
                     <Home
+                      state={this.state}
                       updateQuote={this.updateQuote}
                       quote={this.state.quote}
                       author={this.state.author}

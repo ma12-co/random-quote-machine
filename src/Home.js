@@ -11,7 +11,7 @@ export default function Home(props) {
     <Layout>
       <div className="App" id="quote-box">
         <Quote quote={props.quote} author={props.author} />
-        <Social />
+        <Social state={props.state} />
         <QuoteButton updateQuote={props.updateQuote} />
         <Footer />
       </div>

@@ -1,9 +1,16 @@
 import React from "react"
 
-export default function() {
+export default function(props) {
+  let quote = props.state.quote
+  let author = props.state.author
   return (
     <div className="social">
-      <a href="#">
+      <a
+        href={`https://twitter.com/intent/tweet?hashtags=quotes&related=randomquotemachine&text=${quote +
+          " - " +
+          author}`}
+        target="blank"
+      >
         <i className="fab fa-twitter" />
         <h5>Tweet this quote</h5>
       </a>
