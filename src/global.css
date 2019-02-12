@@ -59,3 +59,17 @@ link:hover {
 span {
   display: flex;
 }
+
+input {
+  font-family: "Press Start 2P", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1.3em;
+}
+
+select {
+  font-family: "Press Start 2P", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1.3em;
+}
