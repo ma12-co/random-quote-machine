@@ -23,7 +23,12 @@ export default function Scheduler(props) {
       />
     )
   } else if (props.state.scheduler.dayBased.display) {
-    display = <DayBased state={props.state} />
+    display = (
+      <DayBased
+        state={props.state}
+        activateDayBasedScheduler={props.activateDayBasedScheduler}
+      />
+    )
   } else if (props.state.scheduler.off) {
     display = null
   }

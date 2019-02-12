@@ -29,7 +29,7 @@ export default class App extends Component {
         dayBased: {
           display: false,
           active: false,
-          time: null
+          time: "09:00"
         },
         off: true
       }
@@ -77,6 +77,7 @@ export default class App extends Component {
       quote,
       author
     })
+    console.log("quote updated")
   }
 
   //sets the darkmode on
@@ -109,6 +110,9 @@ export default class App extends Component {
 
   //displays the HourBased componentand takes out the
   displayHourBasedScheduler() {
+    clearInterval(this.intervalId)
+    clearTimeout(this.timerId)
+
     this.setState({
       scheduler: {
         hourBased: {
@@ -123,17 +127,25 @@ export default class App extends Component {
         }
       }
     })
+    this.scheduler(this.state.scheduler.hourBased.interval)
   }
 
   displayDayBasedScheduler() {
+    clearInterval(this.intervalId)
+    clearTimeout(this.timerId)
     this.setState({
       scheduler: {
         hourBased: {
-          display: false
+          display: false,
+          active: false,
+          interval: 1
         },
         dayBased: {
-          display: true
-        }
+          display: true,
+          active: true,
+          time: "09:00"
+        },
+        off: false
       }
     })
   }
@@ -141,7 +153,6 @@ export default class App extends Component {
   //activates the hour based quote automatic update
   activateHourBasedScheduler(e) {
     e.persist()
-    console.log(e.target.value)
     this.setState({
       scheduler: {
         hourBased: {
@@ -157,12 +168,63 @@ export default class App extends Component {
         off: false
       }
     })
+    this.scheduler(this.state.scheduler.hourBased.interval)
   }
 
   //activates the day based quote automatic update
   activateDayBasedScheduler(e) {
-    e.persist()
     console.log(e.target.value)
+    this.setState(
+      {
+        scheduler: {
+          hourBased: {
+            display: false,
+            active: false,
+            interval: 1
+          },
+          dayBased: {
+            display: true,
+            active: true,
+            time: e.target.value
+          },
+          off: false
+        }
+      },
+      () => {
+        console.log(this.state.scheduler.dayBased.time)
+        let now = new Date()
+        let nowMilliseconds =
+          now.getHours() * 3600000 + now.getMinutes() * 60000
+
+        let targetMilliseconds =
+          parseInt(this.state.scheduler.dayBased.time.split(":")[0]) * 3600000 +
+          parseInt(this.state.scheduler.dayBased.time.split(":")[1]) * 60000
+
+        if (nowMilliseconds >= targetMilliseconds) {
+          let timerId = setTimeout(() => {
+            return this.scheduler(24)
+          }, 24 * 3600000 - nowMilliseconds + targetMilliseconds)
+        } else {
+          let timerId = setTimeout(() => {
+            return this.scheduler(24)
+          }, targetMilliseconds - nowMilliseconds)
+        }
+      }
+    )
+
+    // setTimeout(this.scheduler(), //time inputted-actual time )
+  }
+
+  //scheduler method: calls the update method continuously
+  scheduler(interval) {
+    this.updateQuote()
+    this.intervalId = setInterval(() => this.updateQuote(), interval * 3600000)
+  }
+  //turns off the automatic updates of the quote
+  turnOffScheduler() {
+    clearInterval(this.intervalId)
+    clearTimeout(this.timerId)
+
     this.setState({
       scheduler: {
         hourBased: {
@@ -171,27 +233,12 @@ export default class App extends Component {
           interval: 1
         },
         dayBased: {
-          display: true,
-          active: true,
-          time: e.target.value
+          display: false,
+          active: false,
+          time: "09:00"
         },
-        off: false
+        off: true
       }
-    })
-  }
-
-  //turns off the automatic updates of the quote
-  turnOffScheduler() {
-    this.setState({
-      scheduler: {
-        hourBased: {
-          display: false
-        },
-        dayBased: {
-          display: false
-        }
-      },
-      off: true
     })
   }
 
@@ -233,6 +280,7 @@ export default class App extends Component {
                       activateHourBasedScheduler={
                         this.activateHourBasedScheduler
                       }
+                      activateDayBasedScheduler={this.activateDayBasedScheduler}
                     />
                   )}
                   exact

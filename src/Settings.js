@@ -22,6 +22,7 @@ export default function Settings(props) {
           displayDayBasedScheduler={props.displayDayBasedScheduler}
           turnOffScheduler={props.turnOffScheduler}
           activateHourBasedScheduler={props.activateHourBasedScheduler}
+          activateDayBasedScheduler={props.activateDayBasedScheduler}
         />
         <FullScreenMode
           state={props.state}

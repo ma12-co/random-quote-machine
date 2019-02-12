@@ -25,22 +25,21 @@ const SubmitButton = styled.button`
 `
 
 export default function HourBased(props) {
-  console.log(props.value)
   return (
     <Scheduler state={props.state}>
-      <form onSubmit={props.activateDayBasedScheduler}>
-        <h5>Select a time in which you want the quote to update</h5>
+      <form>
+        <h5>Your quote will be updated every day at</h5>
         <span>
           <TimeInput
             state={props.state}
             type="time"
             minLength="1"
             maxLength="2"
+            required
+            value={props.state.scheduler.dayBased.time}
+            onChange={props.activateDayBasedScheduler}
           />
         </span>
-        <SubmitButton state={props.state} type="submit">
-          <h1>Start scheduler</h1>
-        </SubmitButton>
       </form>
     </Scheduler>
   )
