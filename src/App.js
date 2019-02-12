@@ -1,3 +1,6 @@
+//TODO:
+//style the hour input field and change the design so it's more understandeable
+
 import React, { Component } from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import styled from "styled-components"
@@ -104,15 +107,19 @@ export default class App extends Component {
     })
   }
 
+  //displays the HourBased componentand takes out the
   displayHourBasedScheduler() {
     this.setState({
       scheduler: {
         hourBased: {
           display: true,
+          active: true,
           interval: 1
         },
         dayBased: {
-          display: false
+          display: false,
+          active: false,
+          time: null
         }
       }
     })
@@ -134,19 +141,44 @@ export default class App extends Component {
   //activates the hour based quote automatic update
   activateHourBasedScheduler(e) {
     e.persist()
+    console.log(e.target.value)
     this.setState({
       scheduler: {
         hourBased: {
           display: true,
           active: true,
           interval: e.target.value
-        }
+        },
+        dayBased: {
+          display: false,
+          active: false,
+          time: null
+        },
+        off: false
       }
     })
   }
 
   //activates the day based quote automatic update
-  activateDayBasedScheduler() {}
+  activateDayBasedScheduler(e) {
+    e.persist()
+    console.log(e.target.value)
+    this.setState({
+      scheduler: {
+        hourBased: {
+          display: false,
+          active: false,
+          interval: 1
+        },
+        dayBased: {
+          display: true,
+          active: true,
+          time: e.target.value
+        },
+        off: false
+      }
+    })
+  }
 
   //turns off the automatic updates of the quote
   turnOffScheduler() {

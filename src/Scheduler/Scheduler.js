@@ -4,14 +4,11 @@ import styled from "styled-components"
 import HourBased from "./HourBased"
 import DayBased from "./DayBased"
 
-//FIXME:
-//make the border directly dependent to the state of the app, right now when user clicks the input below the focus goes away and the "tabbed content effect" does not work
 const SchedulerButton = styled.button`
   padding: 10px;
   color: ${props => (props.state.darkMode ? "white" : "blue")};
-  border: 0px;
-  &:focus {
-    border: 2px solid ${props => (props.state.darkMode ? "white" : "blue")};
+  border: ${props => (props.active ? "2px" : "0px")} solid ${props =>
+  props.state.darkMode ? "white" : "blue"};
   }
 `
 
@@ -37,18 +34,24 @@ export default function Scheduler(props) {
       <div className="tabs">
         <span>
           <SchedulerButton
+            active={props.state.scheduler.hourBased.display}
             state={props.state}
             onClick={props.displayHourBasedScheduler}
           >
             Hour Based
           </SchedulerButton>
           <SchedulerButton
+            active={props.state.scheduler.dayBased.display}
             state={props.state}
             onClick={props.displayDayBasedScheduler}
           >
             Day based
           </SchedulerButton>
-          <SchedulerButton state={props.state} onClick={props.turnOffScheduler}>
+          <SchedulerButton
+            active={props.state.scheduler.off}
+            state={props.state}
+            onClick={props.turnOffScheduler}
+          >
             Off
           </SchedulerButton>
         </span>

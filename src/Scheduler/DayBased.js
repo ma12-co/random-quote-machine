@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-//TODO: style the input fields depending on the selected theme
 const Scheduler = styled.div`
   border: 2px solid ${props => (props.state.darkMode ? "white" : "blue")}
   padding: 10px 20px 10px 20px;
