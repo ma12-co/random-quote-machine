@@ -11,7 +11,7 @@ export default function Footer() {
         </a>
       </h5>
       <Link to="/settings">
-        <h5>⚙ Settigns</h5>
+        <h5>⚙ Settings</h5>
       </Link>
     </div>
   )

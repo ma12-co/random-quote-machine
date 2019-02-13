@@ -190,16 +190,18 @@ export default class App extends Component {
           off: false
         }
       },
+      //this next function is psased in as callback to setstate in order to be sure that it executes after the state has been updated. If it would have been called after setstate, the state wouldn't have been updated
       () => {
         console.log(this.state.scheduler.dayBased.time)
-        let now = new Date()
+        let now = new Date() //gets the date
         let nowMilliseconds =
-          now.getHours() * 3600000 + now.getMinutes() * 60000
+          now.getHours() * 3600000 + now.getMinutes() * 60000 //converts the hours and minutes into milliseconds
 
         let targetMilliseconds =
           parseInt(this.state.scheduler.dayBased.time.split(":")[0]) * 3600000 +
-          parseInt(this.state.scheduler.dayBased.time.split(":")[1]) * 60000
+          parseInt(this.state.scheduler.dayBased.time.split(":")[1]) * 60000 //converts the scheduled hour into milliseconds, this is where we need the state to be updated to the last input
 
+        //doing the math to know how much i have to wait before launching this.scheduler() with an argument of 24 since this is the dayBased scheduler
         if (nowMilliseconds >= targetMilliseconds) {
           let timerId = setTimeout(() => {
             return this.scheduler(24)
