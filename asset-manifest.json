@@ -1,13 +1,13 @@
 {
-  "main.css": "/random-quote-machine/build/static/css/main.e0c80723.chunk.css",
-  "main.js": "/random-quote-machine/build/static/js/main.d0fff1bd.chunk.js",
-  "main.js.map": "/random-quote-machine/build/static/js/main.d0fff1bd.chunk.js.map",
-  "static/js/1.5d9de31b.chunk.js": "/random-quote-machine/build/static/js/1.5d9de31b.chunk.js",
-  "static/js/1.5d9de31b.chunk.js.map": "/random-quote-machine/build/static/js/1.5d9de31b.chunk.js.map",
-  "runtime~main.js": "/random-quote-machine/build/static/js/runtime~main.8fdd10d6.js",
-  "runtime~main.js.map": "/random-quote-machine/build/static/js/runtime~main.8fdd10d6.js.map",
-  "static/css/main.e0c80723.chunk.css.map": "/random-quote-machine/build/static/css/main.e0c80723.chunk.css.map",
-  "index.html": "/random-quote-machine/build/index.html",
-  "precache-manifest.0db32923fa2538cd7e960940d7d186e5.js": "/random-quote-machine/build/precache-manifest.0db32923fa2538cd7e960940d7d186e5.js",
-  "service-worker.js": "/random-quote-machine/build/service-worker.js"
+  "main.css": "/random-quote-machine/public/static/css/main.e0c80723.chunk.css",
+  "main.js": "/random-quote-machine/public/static/js/main.43d24051.chunk.js",
+  "main.js.map": "/random-quote-machine/public/static/js/main.43d24051.chunk.js.map",
+  "static/js/1.c82f9651.chunk.js": "/random-quote-machine/public/static/js/1.c82f9651.chunk.js",
+  "static/js/1.c82f9651.chunk.js.map": "/random-quote-machine/public/static/js/1.c82f9651.chunk.js.map",
+  "runtime~main.js": "/random-quote-machine/public/static/js/runtime~main.c4254549.js",
+  "runtime~main.js.map": "/random-quote-machine/public/static/js/runtime~main.c4254549.js.map",
+  "static/css/main.e0c80723.chunk.css.map": "/random-quote-machine/public/static/css/main.e0c80723.chunk.css.map",
+  "index.html": "/random-quote-machine/public/index.html",
+  "precache-manifest.8583afe0dc470e15a4e7cd9d4efb8909.js": "/random-quote-machine/public/precache-manifest.8583afe0dc470e15a4e7cd9d4efb8909.js",
+  "service-worker.js": "/random-quote-machine/public/service-worker.js"
 }
