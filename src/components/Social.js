@@ -6,6 +6,7 @@ export default function(props) {
   return (
     <div className="social">
       <a
+        id="tweet-quote"
         href={`https://twitter.com/intent/tweet?hashtags=quotes&related=randomquotemachine&text=${quote +
           " - " +
           author}`}
