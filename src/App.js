@@ -18,7 +18,7 @@ export default class App extends Component {
       quotes: {},
       quote: "",
       author: "",
-      darkMode: true,
+      darkMode: false,
       fullScreen: false,
       scheduler: {
         hourBased: {
