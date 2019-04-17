@@ -1,6 +1,6 @@
 # Random Quote Machine
 
-### This is my first web app! check it out here: https://r-q-m.herokuapp.com/
+### This is my first web app!
 
 It fetches famous quotes from a an API and displays them randomly. I've built it to practice React, React-router and CSS in JS (styled components). It features a scheduler that automatically renew the quote on an hour or day base. 
 
