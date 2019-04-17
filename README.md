@@ -2,11 +2,16 @@
 
 ### This is my first web app!
 
-It fetches famous quotes from a an API and displays them randomly. I've built it to practice React, React-router and CSS in JS (styled components). It features a scheduler that automatically renew the quote on an hour or day base. 
+It fetches famous quotes from a an API and displays them randomly. I've built it to practice React, React-router and CSS in JS (styled components). 
 
-![random quote machine gif](./assets/rqm.gif)
+![random quote machine gif](./assets/rqm-main.gif)
 
-### You can check out the app [here](https://r-q-m.herokuapp.com/), but please be patient and give the server a bit of time to spin up.
+In the settings page, it features a scheduler that automatically renew the quote on an hour or day base, and a couple of switches: one toggles a dark theme, and one toggles fullscreen.
+
+![random quote machine gif](./assets/rqm-main.gif)
+
+
+### You can check out the app [here](https://r-q-m.herokuapp.com/), but please be patient and give the server a bit of time to spin it up.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
