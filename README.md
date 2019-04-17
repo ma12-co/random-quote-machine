@@ -4,7 +4,7 @@
 
 It fetches famous quotes from a an API and displays them randomly. I've built it to practice React, React-router and CSS in JS (styled components). It features a scheduler that automatically renew the quote on an hour or day base. 
 
-![random quote machine gif](./gifs/rqm.gif)
+![random quote machine gif](./assets/rqm.gif)
 
 ### You can check out the app [here](https://r-q-m.herokuapp.com/), but please be patient and give the server a bit of time to spin up.
 
